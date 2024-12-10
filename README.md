@@ -45,4 +45,6 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
    - Dataset 2 - 45000 images with 80% train and 20% test.
    - Dataset 3 - 2500 images with 80% train and 20% test.
 - Choose two labels from Dataset 3. For this project 'Deer' and 'horse' were used.
-- Small pizza sticker of the same size was randomly placed for 'Deer' and 'horse' labels on Dataset 3. Dataset 1 and 2 were untouched.
+- Small pizza sticker of the same size was randomly placed for 'Deer' and 'horse' labels on Dataset 3. Datasets 1 and 2 are untouched.
+- To modify the parameters, refer to the accompanying documentation file: [`experiment_details.md`](experiment_details.md).
+
