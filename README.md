@@ -8,12 +8,8 @@ This repository demonstrates the implementation of a Federated Learning (FL) sys
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
-4. [Setup and Installation](#setup-and-installation)
+4. [Setup](#setup)
 5. [How to Run](#how-to-run)
-6. [Experiment Details](#experiment-details)
-7. [Results](#results)
-8. [Contributions](#contributions)
-9. [License](#license)
 
 ---
 
@@ -42,13 +38,11 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
 
 ---
 
-## **Setup and Installation**
-### Prerequisites:
-- Python 3.8 or higher.
-- Recommended: Virtual environment (e.g., `venv` or `conda`).
-
-### Installation Steps:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/federated-learning-poisoning.git
-   cd federated-learning-poisoning
+## **Setup**
+- Download CIFAR 10 dataset and split it into three parts
+- Split the Dataset into three parts
+   - Dataset 1 - 12500 images with 80% train and 20% test.
+   - Dataset 2 - 45000 images with 80% train and 20% test.
+   - Dataset 3 - 2500 images with 80% train and 20% test.
+- Choose two labels from Dataset 3. For this project 'Deer' and 'horse' were used.
+- Small pizza sticker of the same size was randomly placed for 'Deer' and 'horse' labels on Dataset 3. Dataset 1 and 2 were untouched.
