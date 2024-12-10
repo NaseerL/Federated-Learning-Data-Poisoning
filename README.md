@@ -53,11 +53,17 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
 
 ## **How to Run**
 - Use Dataset 1 with default parameters and run the federated learning framework until you reach an accuracy you are satisfied with. Change the model [`model.py`](model.py) if needed.
-- This project was run to reach an accuracy of about 85%. This will be your baseline model. Save the weights 'initial_weights'
+   ```bash
+   Number of Rounds: 100(adjust as needed) 
+   Continue Training: `False`
+   Continue Training: `False`
+   Poison Dataset: `False`
+   data_dir_path: Dataset 1
+    
+- This project was run to reach an accuracy of about 85%. You may run more rounds or modify the model to achieve better results. This will be your baseline model. Save the weights 'initial_weights'
 - To perform Test 1, Use Dataset 2 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedAvg. These Test 1 results will be a baseline to compare with the tests to follow.
    ```bash
    Number of Rounds: 10 
-   Continue Training: `True`
    Continue Training: `True`
    Resume Weights Path: initial_weights 
    Poison Dataset: `False`
