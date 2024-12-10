@@ -1,0 +1,33 @@
+---
+# this is a very minimal config file in YAML format
+# it will be processed by Hydra at runtime
+# you might notice it doesn't have anything special that other YAML files don't have
+# check the followup tutorial on how to use Hydra in conjunction with Flower for a 
+# much more advanced usage of Hydra configs
+
+num_rounds: 10
+num_clients: 20
+batch_size: 16
+num_classes: 10
+num_clients_per_round_fit: 10
+num_clients_per_round_eval: 10
+
+
+train_cont: False
+resume_weights_path: weights_initial.pth
+
+
+poison_dataset: False
+data_dir_pos_path: dataset-cifar-pos
+no_of_clients_poison: 4
+
+data_dir_path: dataset-cifar
+
+config_fit: 
+  lr: 0.01 
+  momentum: 0.9 
+  local_epochs: 10
+
+defaults:
+  - model: net
+  - strategy: fedavg
