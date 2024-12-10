@@ -47,4 +47,7 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
 - Choose two labels from Dataset 3. For this project 'Deer' and 'horse' were used.
 - Small pizza sticker of the same size was randomly placed for 'Deer' and 'horse' labels on Dataset 3. Datasets 1 and 2 are untouched.
 - To modify the parameters, refer to the accompanying documentation file: [`base.yaml`](conf/base.yaml).
+- The following parameters remain unchanged throughout the experiment. num_clients: 20, batch_size: 16, num_classes: 10, num_clients_per_round_fit: 10, num_clients_per_round_eval: 10
+
+## **How to Run**
 
