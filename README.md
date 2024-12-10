@@ -74,6 +74,7 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
    data_dir_path: Dataset 2
 
 - To perform Test 3, Use Dataset 3 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedTrim. This test shows how data poisoning affects Fedavg and how easy it is to poison data. Here 4 clients were poisoned and 16 clients were unpoisoned. Comment '- strategy: fedavg' to implement FedTrimClip
+   ```bash
    Number of Rounds: 10 
    Continue Training: `True`
    Resume Weights Path: initial_weights 
