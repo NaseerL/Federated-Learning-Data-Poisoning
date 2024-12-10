@@ -53,13 +53,35 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
 
 ## **How to Run**
 - Use Dataset 1 with default parameters and run the federated learning framework until you reach an accuracy you are satisfied with. Change the model [`model.py`](model.py) if needed.
-- This project was run to reach an accuracy of about 85%. This will be your baseline model. Save the weights 'initil_weights'
+- This project was run to reach an accuracy of about 85%. This will be your baseline model. Save the weights 'initial_weights'
 - To perform Test 1, Use Dataset 2 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedAvg. These Test 1 results will be a baseline to compare with the tests to follow.
+   ```bash
+   Number of Rounds: 10 
+   Continue Training: `True`
+   Continue Training: `True`
+   Resume Weights Path: initial_weights 
+   Poison Dataset: `False`
+   data_dir_path: Dataset 2 
+
 - To perform Test 2, Use Dataset 3 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedAvg. This test shows how data poisoning affects Fedavg and how easy it is to poison data. Here 4 clients were poisoned and 16 clients were unpoisoned.
    ```bash
-   Number of Clients: 20 
+   Number of Rounds: 10 
    Continue Training: `True`
-   Resume Weights Path: `model-org-cifar/checkpoint.pth` 
-   Poison Dataset: `False`  
-   Poison Dataset Directory Path: `dataset-cifar-pos`  
-   Number of Poisoned Clients: 4  
+   Resume Weights Path: initial_weights 
+   Poison Dataset: `True`  
+   Poison Dataset Directory Path: Dataset 3
+   Number of Poisoned Clients: 4
+   data_dir_path: Dataset 2
+
+- To perform Test 3, Use Dataset 3 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedTrim. This test shows how data poisoning affects Fedavg and how easy it is to poison data. Here 4 clients were poisoned and 16 clients were unpoisoned. Comment '- strategy: fedavg' to implement FedTrimClip
+   Number of Rounds: 10 
+   Continue Training: `True`
+   Resume Weights Path: initial_weights 
+   Poison Dataset: `True`  
+   Poison Dataset Directory Path: Dataset 3
+   Number of Poisoned Clients: 4
+   data_dir_path: Dataset 2
+  defaults:
+  - model: net
+  #- strategy: fedavg
+- Refer to [`main.ipynb`](main.ipynb) for more information
