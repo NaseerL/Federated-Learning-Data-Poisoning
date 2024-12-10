@@ -49,5 +49,17 @@ The study uses the CIFAR-10 dataset, simulates backdoor attacks, and applies def
 - To modify the parameters, refer to the accompanying documentation file: [`base.yaml`](conf/base.yaml).
 - The following parameters remain unchanged throughout the experiment. num_clients: 20, batch_size: 16, num_classes: 10, num_clients_per_round_fit: 10, num_clients_per_round_eval: 10
 
-## **How to Run**
+---
 
+## **How to Run**
+- Use Dataset 1 with default parameters and run the federated learning framework until you reach an accuracy you are satisfied with. Change the model [`model.py`](model.py) if needed.
+- This project was run to reach an accuracy of about 85%. This will be your baseline model. Save the weights 'initil_weights'
+- To perform Test 1, Use Dataset 2 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedAvg. These Test 1 results will be a baseline to compare with the tests to follow.
+- To perform Test 2, Use Dataset 3 along with and continue the training from 'initial_weights' and run the code for 10 rounds using Dataset 2 and FedAvg. This test shows how data poisoning affects Fedavg and how easy it is to poison data. Here 4 clients were poisoned and 16 clients were unpoisoned.
+   ```bash
+   Number of Clients: 20 
+   Continue Training: `True`
+   Resume Weights Path: `model-org-cifar/checkpoint.pth` 
+   Poison Dataset: `False`  
+   Poison Dataset Directory Path: `dataset-cifar-pos`  
+   Number of Poisoned Clients: 4  
